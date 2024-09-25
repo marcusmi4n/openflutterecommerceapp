@@ -30,16 +30,10 @@ class NetworkRequest {
 
   Future<http.Response> getResult() async {
     print('ADDRESS: $address');
-    if (listBody != null) {
-      print('listBody: ${jsonEncode(listBody)}');
-    }
-    if (plainBody != null) {
+    print('listBody: ${jsonEncode(listBody)}');
       print('plainBody: $plainBody');
-    }
-    if (body != null) {
       print('body: ${jsonEncode(body)}');
-    }
-    http.Response response;
+      http.Response response;
     headers ??= _jsonHeaders;
     try {
       Uri uri = address; //Uri.parse(address);
@@ -84,16 +78,10 @@ class NetworkRequest {
       FilterRules filterRules,
       SortRules sortRules) {
     List<String> parameters = [];
-    if (pageIndex != null) {
-      parameters.add('page=${pageIndex + 1}');
-    }
-    if (pageSize != null) {
+    parameters.add('page=${pageIndex + 1}');
       parameters.add('per_page=$pageSize');
-    }
-    if (categoryId != null) {
       parameters.add('category=$categoryId');
-    }
-    if (sortRules != null) {
+      if (sortRules != null) {
       parameters.add('orderby=${sortRules.jsonRuleName}');
       parameters.add('order=${sortRules.jsonOrder}');
     }

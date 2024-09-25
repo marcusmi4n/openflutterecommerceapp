@@ -24,11 +24,11 @@ class FindProductsByFilterUseCaseImpl implements FindProductsByFilterUseCase {
     try {
       var products = await _findProductsByFilter(params);
 
-      if (products != null && products.isNotEmpty) {
+      if (products.isNotEmpty) {
         return ProductsByFilterResult(  
           products,
           products.length,
-          FilterRules.getSelectableAttributes(products), exception: null!
+          FilterRules.getSelectableAttributes(products), exception: null
         );
       }
 
@@ -36,14 +36,14 @@ class FindProductsByFilterUseCaseImpl implements FindProductsByFilterUseCase {
       return ProductsByFilterResult(  
         [],
         0,
-        null!,
+        null,
         exception: EmptyProductsException()
       );
     }
     return ProductsByFilterResult(  
       [],
       0,
-      null!,
+      null,
       exception: EmptyProductsException()
     );
   }
@@ -54,7 +54,7 @@ class FindProductsByFilterUseCaseImpl implements FindProductsByFilterUseCase {
     if (params.filterByCategory) {
       ProductRepository productRepository = sl();
       products =
-          await productRepository.getProducts(categoryId: params.categoryId, filterRules: null!);
+          await productRepository.getProducts(categoryId: params.categoryId, filterRules: null);
     }
     return products;
   }

@@ -100,14 +100,12 @@ class _OpenFlutterSelectValuesBoxesState<T> extends State<OpenFlutterSelectValue
   }
 
   void updateSelectedBoxes(T currentValue) {
-    if (selectedValues != null) {
-      if (selectedValues.contains(currentValue)) {
-        selectedValues.remove(currentValue);
-      } else {
-        selectedValues.add(currentValue);
-      }
+    if (selectedValues.contains(currentValue)) {
+      selectedValues.remove(currentValue);
+    } else {
+      selectedValues.add(currentValue);
     }
-    setState(() {});
+      setState(() {});
     widget.onClick(selectedValues);
   }
 }

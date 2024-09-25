@@ -228,10 +228,6 @@ class ProductReviewWrapperState extends State<ProductReviewWrapper> {
   }
 
   Widget _buildProductReviewItem(int index) {
-    if (comments == null) {
-      return _buildIndicator();
-    }
-
     if (comments.isNotEmpty) {
       var productReview = _getProductReview(index, comments);
 

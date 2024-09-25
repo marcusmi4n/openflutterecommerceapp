@@ -164,7 +164,7 @@ class Product extends Equatable {
     }
   }
 
-  CommerceImage get mainImage => (images != null && images.isNotEmpty)
+  CommerceImage get mainImage => (images.isNotEmpty)
       ? images.first
       : CommerceImage.placeHolder();
 }

@@ -33,12 +33,12 @@ class GetFavoriteProductsUseCaseImpl implements GetFavoriteProductsUseCase {
       return GetFavoriteProductResult(
         products: favoriteProducts,
         filterRules: FilterRules.getFavoriteSelectableAttributes(favoriteProducts),
-        result: true, exception: null!
+        result: true, exception: null
       );
     } catch (e) {
       return GetFavoriteProductResult(  
         result: false,
-        exception: GetFavoriteProductException(), products: [], filterRules: null!
+        exception: GetFavoriteProductException(), products: [], filterRules: null
       );
     }
   }

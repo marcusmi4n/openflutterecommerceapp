@@ -84,7 +84,7 @@ class ProductModel extends ProductEntity {
     if (json['categories'] != null) {
       for (var category in json['categories']) {
         categories.add(ProductCategoryEntity(
-            id: category['id'] ?? 0, title: category['name'] ?? '', description: '', image: '', thumb: '', parentId: null!, orderNumber: null!, count: null!));
+            id: category['id'] ?? 0, title: category['name'] ?? '', description: '', image: '', thumb: '', parentId: null, orderNumber: null, count: null));
       }
     }
     return categories;

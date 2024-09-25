@@ -8,7 +8,6 @@ import 'package:openflutterecommerce/config/theme.dart';
 import 'package:openflutterecommerce/data/model/product.dart';
 import 'package:openflutterecommerce/presentation/features/product_details/product_screen.dart';
 
-import '../extensions/product_view.dart';
 
 class OpenFlutterProductListView extends StatelessWidget {
   final double width;

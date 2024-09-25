@@ -24,7 +24,7 @@ class GetPromosUseCaseImpl implements GetPromosUseCase {
       if (promos != null && promos.isNotEmpty) {
         return GetPromosResult(  
           promos: promos,
-          result: true, exception: null!
+          result: true, exception: null
         );
       }
 

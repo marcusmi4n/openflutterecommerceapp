@@ -37,6 +37,6 @@ class ProductReview extends Equatable {
       ];
 
   bool hasPhotos() {
-    return photos != null && photos.isNotEmpty;
+    return photos.isNotEmpty;
   }
 }

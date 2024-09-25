@@ -21,7 +21,7 @@ class AddProductToCartUseCaseImpl implements AddProductToCartUseCase {
   Future<AddToCartResult> execute(CartItem item) async {
     try {
       CartRepositoryImpl.cartProductDataStorage.items.add(item);
-      return AddToCartResult(result: true, exception: null!);
+      return AddToCartResult(result: true, exception: null);
     } catch (e) {
       return AddToCartResult(  
         result: false,

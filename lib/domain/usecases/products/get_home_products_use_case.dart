@@ -20,9 +20,9 @@ class GetHomePageProductsUseCaseImpl implements GetHomePageProductsUseCase {
     try {
       ProductRepository productRepository = sl();
       return HomeProductsResult(  
-        salesProducts: await productRepository.getProducts(categoryId: 1, filterRules: null!),
-        newProducts: await productRepository.getProducts(categoryId: 2, filterRules: null!),
-        result: false, exception: null!,
+        salesProducts: await productRepository.getProducts(categoryId: 1, filterRules: null),
+        newProducts: await productRepository.getProducts(categoryId: 2, filterRules: null),
+        result: false, exception: null,
       );
     } catch (e) {
       return HomeProductsResult(  

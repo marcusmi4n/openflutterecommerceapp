@@ -62,13 +62,13 @@ class ProductRepositoryImpl extends ProductRepository with FavoritesRepository {
         productRepository = LocalProductRepository();
       }
 
-      List<Product> products = await productRepository.getProducts(filterRules: null!);
+      List<Product> products = await productRepository.getProducts(filterRules: null);
 
       //check favorites
       dataStorage.products = [];
-      products.forEach((product) => {
+      products.forEach((product) {
             dataStorage.products
-                .add(product.favorite(checkFavorite(product.id)))
+                .add(product.favorite(checkFavorite(product.id)));
           });
 
       return dataStorage.products;
@@ -108,8 +108,7 @@ class ProductRepositoryImpl extends ProductRepository with FavoritesRepository {
     //TODO: remove from database in the future
     dataStorage.favProducts.removeWhere((product) =>
         product.product.id == productId &&
-        (selectedAttributes == null ||
-            product.favoriteForm == selectedAttributes));
+        (product.favoriteForm == selectedAttributes));
     return dataStorage.favProducts;
   }
 

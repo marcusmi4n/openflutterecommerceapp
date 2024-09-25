@@ -31,14 +31,14 @@ class GetCartProductsUseCaseImpl implements GetCartProductsUseCase {
         totalPrice: cartRepository.getTotalPrice(),
         calculatedPrice: cartRepository.getCalculatedPrice(),
         appliedPromo: await cartRepository.getAppliedPromo(),
-        result: true, exception: null!);
+        result: true, exception: null);
     } catch (e) {
       return GetCartProductsResult( 
         cartItems: [], 
         totalPrice: 0,
         calculatedPrice: 0,
         result: false,
-        exception: GetCartProductsException(), appliedPromo: null!
+        exception: GetCartProductsException(), appliedPromo: null
       );
     }
   }

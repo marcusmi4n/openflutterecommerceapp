@@ -26,7 +26,7 @@ class FindCategoriesByFilterUseCaseImpl
       List<ProductCategory> categories = await _categoryRepository
           .getCategories(parentCategoryId: params.categoryId);
       return CategoriesByFilterResult(categories, categories.length,
-          exception: null!);
+          exception: null);
     } catch (e) {
       return CategoriesByFilterResult([], 0,
           exception: EmptyCategoriesException());

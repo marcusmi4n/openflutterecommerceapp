@@ -17,12 +17,10 @@ class OpenFlutterHashTagList extends StatelessWidget {
   Widget build(BuildContext context) {
     var hashtagButtons = <Widget>[];
     var _theme = Theme.of(context);
-    if (tags != null) {
-      for (var i = 0; i < tags.length; i++) {
-        hashtagButtons.add(buildButton(tags[i], _theme));
-      }
+    for (var i = 0; i < tags.length; i++) {
+      hashtagButtons.add(buildButton(tags[i], _theme));
     }
-    return Container(
+      return Container(
       height: height,
       child: ListView(
         scrollDirection: Axis.horizontal,

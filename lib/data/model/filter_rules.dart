@@ -45,8 +45,8 @@ class FilterRules {
 
   /// this behavior can be changed in subclasses to show special attribute instead of first
   MapEntry<ProductAttribute, List<String>>? get topmostOption =>
-      selectableAttributes?.entries?.isNotEmpty == true
-          ? selectableAttributes?.entries?.first
+      selectableAttributes.entries.isNotEmpty == true
+          ? selectableAttributes.entries.first
           : MapEntry<ProductAttribute, List<String>>(
               ProductAttribute(name: '', id: -1, options: [], info: ''), []);
 
@@ -89,13 +89,13 @@ class FilterRules {
     List<int> hashTagIds = [];
     List<HashTag> hashTags = [];
 
-    products.forEach((product) => {
+    products.forEach((product) {
           product.hashTags != null
               ? product.hashTags.forEach((HashTag hashTag) => {
                     if (!hashTagIds.contains(hashTag.id))
                       {hashTagIds.add(hashTag.id), hashTags.add(hashTag)}
                   })
-              : {},
+              : {};
           product.selectableAttributes != null
               ?
               // returnAttributes.addAll({for (var attribute in product.selectableAttributes) attribute: []})
@@ -111,18 +111,18 @@ class FilterRules {
                             ?.addAll(attribute.options)
                       }
                   })
-              : {},
-          if (product.price > maxPrice) maxPrice = product.price,
-          if (product.price < minPrice) minPrice = product.price,
+              : {};
+          if (product.price > maxPrice) maxPrice = product.price;
+          if (product.price < minPrice) minPrice = product.price;
           //TOOD: change to categories instead of categoryIds
           product.categories.forEach((ProductCategory category) => {
                 if (!categoryIds.contains(category.id))
                   {categoryIds.add(category.id), categories[category] = false}
-              })
+              });
         });
-    attributesIdToString.keys.forEach((attributeById) => {
-          returnAttributes[attributesIdToAttribute[attributeById]!!] =
-              attributesIdToString[attributeById]!.toSet().toList()
+    attributesIdToString.keys.forEach((attributeById) {
+          returnAttributes[attributesIdToAttribute[attributeById]!] =
+              attributesIdToString[attributeById]!.toSet().toList();
         });
 
     return FilterRules(

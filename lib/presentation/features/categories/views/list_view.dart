@@ -70,25 +70,23 @@ class _CategoriesListViewState extends State<CategoriesListView> {
 
   List<Widget> buildCategoryList(List<ProductCategory> categories) {
     var elements = <Widget>[];
-    if (categories != null) {
-      for (var i = 0; i < categories.length; i++) {
-        elements.add(
-          InkWell(
-            onTap: categories[i].isCategoryContainer
-                ? () {
-                    BlocProvider.of<CategoryBloc>(context)
-                        .add(ChangeCategoryParent(categories[i].id));
-                  }
-                : () {
-                    Navigator.of(context).pushNamed(
-                        OpenFlutterEcommerceRoutes.productList,
-                        arguments: ProductListScreenParameters(categories[i]));
-                  },
-            child: OpenFlutterCatregoryListElement(category: categories[i]),
-          ),
-        );
-      }
+    for (var i = 0; i < categories.length; i++) {
+      elements.add(
+        InkWell(
+          onTap: categories[i].isCategoryContainer
+              ? () {
+                  BlocProvider.of<CategoryBloc>(context)
+                      .add(ChangeCategoryParent(categories[i].id));
+                }
+              : () {
+                  Navigator.of(context).pushNamed(
+                      OpenFlutterEcommerceRoutes.productList,
+                      arguments: ProductListScreenParameters(categories[i]));
+                },
+          child: OpenFlutterCatregoryListElement(category: categories[i]),
+        ),
+      );
     }
-    return elements;
+      return elements;
   }
 }

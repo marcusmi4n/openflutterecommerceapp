@@ -1,4 +1,3 @@
-import 'dart:collection';
 
 import 'package:openflutterecommerce/data/model/product.dart';
 import 'package:openflutterecommerce/data/model/product_attribute.dart';

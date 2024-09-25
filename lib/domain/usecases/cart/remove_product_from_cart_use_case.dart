@@ -18,7 +18,7 @@ class RemoveProductFromCartUseCaseImpl implements RemoveProductFromCartUseCase {
   Future<RemoveProductFromCartResult> execute(CartItem item) async {
     try {
       CartRepositoryImpl.cartProductDataStorage.items.remove(item);
-      return RemoveProductFromCartResult(result: true, exception: null!);
+      return RemoveProductFromCartResult(result: true, exception: null);
     } catch (e) {
       return RemoveProductFromCartResult(  
         result: false,

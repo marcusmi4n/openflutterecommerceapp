@@ -30,7 +30,7 @@ abstract class ProductsState extends Equatable {
   });
 
   ProductsState getLoading() {
-    return copyWith(data: null!);
+    return copyWith(data: null);
   }
 
   bool get isProductsLoading => data == null;

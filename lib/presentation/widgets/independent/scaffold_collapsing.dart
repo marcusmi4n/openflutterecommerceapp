@@ -29,7 +29,7 @@ class OpenFlutterCollapsingScaffold extends StatelessWidget {
             ? (BuildContext context, bool innerBoxIsScrolled) {
                 return _buildSilverAppBar(context);
               }
-            : null!,
+            : null,
         body: body,
       ),
       backgroundColor: background,
@@ -40,12 +40,10 @@ class OpenFlutterCollapsingScaffold extends StatelessWidget {
   List<Widget> _buildSilverAppBar(BuildContext context) {
     var tabBars = <Tab>[];
     var _theme = Theme.of(context);
-    if (tabBarList != null) {
-      for (var i = 0; i < tabBarList.length; i++) {
-        tabBars.add(Tab(key: UniqueKey(), text: tabBarList[i]));
-      }
+    for (var i = 0; i < tabBarList.length; i++) {
+      tabBars.add(Tab(key: UniqueKey(), text: tabBarList[i]));
     }
-
+  
     PreferredSizeWidget tabWidget = tabBars.isNotEmpty
         ? TabBar(
             unselectedLabelColor: _theme.primaryColor,

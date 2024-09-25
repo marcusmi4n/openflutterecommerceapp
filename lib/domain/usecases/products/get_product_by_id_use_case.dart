@@ -16,10 +16,10 @@ class GetProductByIdUseCaseImpl implements GetProductByIdUseCase {
     ProductRepository productRepository = sl();
     //TODO: 
     List<Product> products =
-        await productRepository.getProducts(categoryId: params.categoryId, filterRules: null!);
-    Product product = null!;
-    products.forEach((Product f) => {
-        if ( f.id == params.productId) product = f
+        await productRepository.getProducts(categoryId: params.categoryId, filterRules: null);
+    Product product = null;
+    products.forEach((Product f) {
+        if ( f.id == params.productId) product = f;
       }
     );
     return ProductDetailsResults(

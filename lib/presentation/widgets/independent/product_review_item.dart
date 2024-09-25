@@ -98,7 +98,7 @@ class OpenFlutterProductReviewItem extends StatelessWidget {
     return SizedBox();
   }
 
-  bool _hasAnAvatar() => avatarUrl != null && avatarUrl.isNotEmpty;
+  bool _hasAnAvatar() => avatarUrl.isNotEmpty;
 
   Widget _buildTitle(BuildContext context) {
     return Container(

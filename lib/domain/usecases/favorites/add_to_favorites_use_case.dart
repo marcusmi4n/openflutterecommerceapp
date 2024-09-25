@@ -24,7 +24,7 @@ class AddToFavoritesUseCaseImpl implements AddToFavoritesUseCase {
           item.favoriteForm
         )
       );
-      return AddToFavoriteResult(result: true, exception: null!);
+      return AddToFavoriteResult(result: true, exception: null);
     } catch (e) {
       return AddToFavoriteResult(  
         result: false,

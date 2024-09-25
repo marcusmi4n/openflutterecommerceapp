@@ -19,7 +19,7 @@ class ChangeCartItemQuantityUseCaseImpl implements ChangeCartItemQuantityUseCase
     try {
       CartRepository cartReposiory = sl();
       await cartReposiory.changeQuantity(params.item, params.quantity);
-      return ChangeCartItemQuantityResult(result: true, exception: null!);
+      return ChangeCartItemQuantityResult(result: true, exception: null);
     } catch (e) {
       return ChangeCartItemQuantityResult( 
         result: false,

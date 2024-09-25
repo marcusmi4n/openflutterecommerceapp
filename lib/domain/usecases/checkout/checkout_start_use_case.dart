@@ -40,15 +40,15 @@ class CheckoutStartUseCaseImpl implements CheckoutStartUseCase {
         currentShippingAddress: await shippingAddressRepository.getDefaultShippingAddress(),
         totalCalculatedPrice: calculatedPrice,
         deliveryPrice: deliveryPrice, 
-        summaryPrice: calculatedPrice + deliveryPrice, exception: null!
+        summaryPrice: calculatedPrice + deliveryPrice, exception: null
       );
     } catch (e) {
       return ChekcoutStartResult(  
         result: false,
         exception: CheckoutStartException(), 
-        currentPaymentMethod: null!,
-        deliveryPrice: null!,
-        totalCalculatedPrice: null!, paymentMethods: [], shippingAddress: [], cartItems: [], currentShippingAddress: null!, summaryPrice: null!
+        currentPaymentMethod: null,
+        deliveryPrice: null,
+        totalCalculatedPrice: null, paymentMethods: [], shippingAddress: [], cartItems: [], currentShippingAddress: null, summaryPrice: null
       );
     }
   }

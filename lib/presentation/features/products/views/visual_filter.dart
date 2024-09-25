@@ -16,50 +16,45 @@ class VisualFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (hashTags == null) {
-      return ListView.builder(
-          scrollDirection: Axis.horizontal, itemBuilder: _blankChip);
-    } else {
-      List<Widget> widgetList = hashTags
-        ?.map((optionHashTag) => 
-          Padding(
-            padding: EdgeInsets.only(right: AppSizes.sidePadding / 2),
-            child: ChoiceChip(
-              selected: selecteHashTags!=null ? 
-                selecteHashTags[optionHashTag] ?? false : false,
-              padding: EdgeInsets.all(
-                AppSizes.linePadding,
-              ),
-              backgroundColor: Theme.of(context).primaryColor,
-              selectedColor: Theme.of(context).accentColor,
-              label: Text(
-                optionHashTag.title,
-                style: Theme.of(context).textTheme.button,
-              ),
-              onSelected: (value) {
-                onFilterChanged(optionHashTag, value);
-              },
+    List<Widget> widgetList = hashTags
+      ?.map((optionHashTag) => 
+        Padding(
+          padding: EdgeInsets.only(right: AppSizes.sidePadding / 2),
+          child: ChoiceChip(
+            selected: selecteHashTags!=null ? 
+              selecteHashTags[optionHashTag] ?? false : false,
+            padding: EdgeInsets.all(
+              AppSizes.linePadding,
             ),
-          ))
-        ?.toList(growable: false) ?? [];
-        
-      return ListView(
-        scrollDirection: Axis.horizontal,
-        children: <Widget>[
-              SizedBox(
-                width: 16,
-              )
-            ] +
-            widgetList
-            +
-            [
-              SizedBox(
-                width: 16,
-              )
-            ],
-      );
+            backgroundColor: Theme.of(context).primaryColor,
+            selectedColor: Theme.of(context).accentColor,
+            label: Text(
+              optionHashTag.title,
+              style: Theme.of(context).textTheme.button,
+            ),
+            onSelected: (value) {
+              onFilterChanged(optionHashTag, value);
+            },
+          ),
+        ))
+      ?.toList(growable: false) ?? [];
+      
+    return ListView(
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+            SizedBox(
+              width: 16,
+            )
+          ] +
+          widgetList
+          +
+          [
+            SizedBox(
+              width: 16,
+            )
+          ],
+    );
     }
-  }
 
   Widget _blankChip(BuildContext context, _) {
     return Padding(

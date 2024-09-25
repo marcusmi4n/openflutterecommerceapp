@@ -1,4 +1,3 @@
-import 'dart:collection';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -11,7 +10,6 @@ import 'package:openflutterecommerce/presentation/widgets/independent/base_produ
 import 'package:openflutterecommerce/presentation/widgets/independent/base_product_tile.dart';
 import 'package:openflutterecommerce/presentation/widgets/independent/product_rating.dart';
 
-import 'commerce_image_view.dart';
 
 extension View on Product {
   Widget getListView(
